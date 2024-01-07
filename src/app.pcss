@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	* {
+		@apply relative;
+	}
+	html {
+		color-schema: dark;
+		color: #ccc;
+		background: radial-gradient(circle at 50% 20%, hsl(0, 0%, 8%) 0%, hsl(0, 0%, 2%) 100%);
+		background-attachment: fixed;
+		background-size: 100svw 100svh;
+	}
+	body {
+		@apply flex flex-col min-h-svh;
+	}
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply text-balance text-white;
+	}
+	p {
+		@apply max-w-[75ch] text-pretty;
+	}
+}
