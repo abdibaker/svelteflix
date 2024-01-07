@@ -15,9 +15,9 @@
 	</ul>
 </nav>
 
-<main class="min-h-[calc(100vh-6rem)] container mx-auto">
+<main class="min-h-[calc(100vh-6rem)] px-4 xl:max-w-screen-xl container mx-auto">
 	<slot />
-</main>	
+</main>
 
 <footer class="flex items-center gap-2 justify-center h-12">
 	<p class="text-lg">Data provided by</p>

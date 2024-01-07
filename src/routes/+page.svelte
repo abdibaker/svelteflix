@@ -5,10 +5,10 @@
 	export let data;
 </script>
 
-<h1 class="my-6 text-4xl">Top Trending Movies</h1>
+<h1 class="my-6 text-4xl">Today's top movies</h1>
 
 <Hero movie={data.featured} />
 
-<Carousel title="Trending" seeMoreHref="" movies={data.trending} />
-<Carousel title="Now playing" seeMoreHref="" movies={data.nowPlaying} />
-<Carousel title="Upcoming"  movies={data.upcoming} />
+<Carousel title="Trending" seeMoreHref="/movies/trending" movies={data.trending} />
+<Carousel title="Now playing" seeMoreHref="/movies/now_playing" movies={data.nowPlaying} />
+<Carousel title="Upcoming" movies={data.upcoming} seeMoreHref="/movies/upcoming" />

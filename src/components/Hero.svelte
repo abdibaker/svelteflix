@@ -17,8 +17,15 @@
 	/>
 
 	<img
-		class={`aspect-[${logo.aspect_ratio}] absolute top-0 left-4 w-1/3 h-full drop-shadow-2xl object-contain`}
+		class={`aspect-[${logo.aspect_ratio}] absolute top-0 left-4 w-1/3 h-full object-contain logo`}
 		src={media(logo.file_path, 1280)}
 		alt={movie.title}
 	/>
 </a>
+
+<style lang="pcss">
+	.logo {
+		object-position: 50% 75%;
+		filter: drop-shadow(0 0 3rem black) drop-shadow(0 0 0.5rem black);
+	}
+</style>

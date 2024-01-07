@@ -11,7 +11,7 @@ export async function load({ fetch }) {
 	const { results: trendingMovies } = trendingResponse as MovieList;
 	const { results: nowPlayingMovies } = nowPlayingResponse as MovieList;
 	const { results: upcomingMovies } = upcomingResponse as MovieList;
-
+	
 	const featuredMovieId = trendingMovies[0].id;
 	const featured = (await api.get(fetch, `/movie/${featuredMovieId}`, {
 		append_to_response: 'images,videos,recommendations'
