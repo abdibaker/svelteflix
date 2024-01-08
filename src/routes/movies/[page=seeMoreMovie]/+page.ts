@@ -13,12 +13,13 @@ export async function load({ params, url, fetch }) {
 	};
 
 	const endpoint = urlMap[title];
-	const response = await api.get(fetch, endpoint, { page });
+	const res = await api.get(fetch, endpoint, { page });
 
 	return {
 		title: title.replace('_', ' '),
 		endpoint,
-		movies: response.results
-		// nexPage:
+		movies: res.results,
+		nextPage: res.page! < res.total_pages ? res.page + 1 : null,
+		infinite: true
 	};
 }

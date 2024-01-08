@@ -2,6 +2,7 @@
 	import '../app.pcss';
 	import logo from '$lib/img/logo.svg';
 	import tmdb from '$lib/img/tmdb.svg';
+	import { page } from '$app/stores';
 </script>
 
 <nav class="flex justify-between h-12 items-center px-4">
@@ -15,7 +16,10 @@
 	</ul>
 </nav>
 
-<main class="min-h-[calc(100vh-6rem)] px-4 xl:max-w-screen-xl container mx-auto">
+<main
+	class="min-h-[calc(100vh-6rem)] px-4 xl:max-w-screen-xl container mx-auto"
+	class:fixedHeight={$page.data.infinite}
+>
 	<slot />
 </main>
 
@@ -25,3 +29,9 @@
 		<img class="h-4" src={tmdb} alt="The Movie Db" />
 	</a>
 </footer>
+
+<style lang="pcss">
+	.fixedHeight {
+		@apply h-0 flex-1;
+	}
+</style>

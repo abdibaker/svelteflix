@@ -16,6 +16,7 @@
 </h2>
 
 <Carousel
+	let:currentPageIndex
 	autoplay
 	pauseOnFocus
 	arrows={false}
@@ -23,15 +24,12 @@
 	dots={false}
 	particlesToShow={8}
 >
-	{#each movies as movie (movie.id)}
-		<a href={`/movies/${movie.id}`} class="pl-4">
+	{#each movies as movie, i}
+		<a href={`/movies/${movie.id}`} class="pl-4" class:pl-0={currentPageIndex === i}>
 			<img class="aspect-[1/2]" src={media(movie.poster_path, 500)} alt={movie.title} />
 		</a>
 	{/each}
 </Carousel>
 
 <style lang="pcss">
-	:global(.sc-carousel__pages-container) {
-		margin-left: -1rem;
-	}
 </style>

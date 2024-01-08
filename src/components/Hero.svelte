@@ -3,6 +3,7 @@
 	import type { MovieDetails } from '$lib/types';
 
 	export let movie: MovieDetails;
+	export let showLogo = true;
 
 	$: images = movie.images;
 	$: backdrop = images.backdrops.find((image) => !image.iso_639_1) || movie.images.backdrops[0];
@@ -16,11 +17,13 @@
 		alt={movie.title}
 	/>
 
-	<img
-		class={`aspect-[${logo.aspect_ratio}] absolute top-0 left-4 w-1/3 h-full object-contain logo`}
-		src={media(logo.file_path, 1280)}
-		alt={movie.title}
-	/>
+	{#if showLogo}
+		<img
+			class={`aspect-[${logo.aspect_ratio}] absolute top-0 left-4 w-1/3 h-full object-contain logo`}
+			src={media(logo.file_path, 1280)}
+			alt={movie.title}
+		/>
+	{/if}
 </a>
 
 <style lang="pcss">
