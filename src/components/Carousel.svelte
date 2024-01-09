@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { smoothLoad } from '$lib/actions';
 	import { media } from '$lib/api';
 	import type { MovieListResult } from '$lib/types';
 	import Carousel from 'svelte-carousel';
@@ -26,7 +27,12 @@
 >
 	{#each movies as movie, i}
 		<a href={`/movies/${movie.id}`} class="pl-4" class:pl-0={currentPageIndex === i}>
-			<img class="aspect-[1/2]" src={media(movie.poster_path, 500)} alt={movie.title} />
+			<img
+				class="aspect-[1/2]"
+				src={media(movie.poster_path, 500)}
+				alt={movie.title}
+				use:smoothLoad
+			/>
 		</a>
 	{/each}
 </Carousel>

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { smoothLoad } from '$lib/actions';
 	import { media } from '$lib/api';
 	import type { MovieDetails } from '$lib/types';
 
@@ -15,6 +16,7 @@
 		class={`aspect-[${backdrop.aspect_ratio}] w-full object-fill`}
 		src={media(backdrop.file_path, 1280)}
 		alt={movie.title}
+		use:smoothLoad
 	/>
 
 	{#if showLogo}
@@ -22,6 +24,7 @@
 			class={`aspect-[${logo.aspect_ratio}] absolute top-0 left-4 w-1/3 h-full object-contain logo`}
 			src={media(logo.file_path, 1280)}
 			alt={movie.title}
+			use:smoothLoad
 		/>
 	{/if}
 </a>

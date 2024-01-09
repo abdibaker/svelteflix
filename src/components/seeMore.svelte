@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { afterNavigate } from '$app/navigation';
+	import { smoothLoad } from '$lib/actions';
 	import { media } from '$lib/api';
 	import type { MovieListResult } from '$lib/types';
 	import { createEventDispatcher } from 'svelte';
@@ -67,7 +68,12 @@
 		{#each movies.slice(firstVisibleIndex, lastVisibleIndex) as movie}
 			<a href={`/movies/${movie.id}`}>
 				{#if movie.poster_path}
-					<img class="aspect-[1/2]" src={media(movie.poster_path, 500)} alt={movie.title} />
+					<img
+						class="aspect-[1/2]"
+						src={media(movie.poster_path, 500)}
+						alt={movie.title}
+						use:smoothLoad
+					/>
 				{:else}
 					<span>{movie.title}</span>
 				{/if}
