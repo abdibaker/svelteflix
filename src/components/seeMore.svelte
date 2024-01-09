@@ -57,7 +57,7 @@
 
 <svelte:window on:resize={calculateDimensions} />
 
-<div bind:this={viewport} class="h-[calc(100svh-12rem)] overflow-y-auto" on:scroll={handleScroll}>
+<div bind:this={viewport} class="h-[calc(100svh-14rem)] overflow-y-auto" on:scroll={handleScroll}>
 	<div
 		bind:this={content}
 		style:padding-top="{paddingTop}px"

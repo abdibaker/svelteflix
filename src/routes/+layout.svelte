@@ -5,7 +5,7 @@
 	import { page } from '$app/stores';
 </script>
 
-<nav class="flex justify-between h-12 items-center px-4">
+<nav class="flex justify-between h-14 items-center px-4">
 	<a href="/">
 		<img class="h-6 lg:h-8" src={logo} alt="svelteflex logo" />
 	</a>
