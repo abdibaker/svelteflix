@@ -1,10 +1,8 @@
 export function smoothLoad(node: HTMLImageElement) {
-	// Set initial styles for the fade-in effect
 	node.style.opacity = '0';
 	node.style.transition = 'opacity 0.4s';
 
 	function load() {
-		// Check if image is already loaded
 		if (node.naturalWidth) {
 			node.style.opacity = '1';
 			return;
@@ -33,7 +31,6 @@ export function smoothLoad(node: HTMLImageElement) {
 
 	observer.observe(node, { attributes: true });
 
-	// Initial load call
 	load();
 
 	// Return the destroy function to clean up

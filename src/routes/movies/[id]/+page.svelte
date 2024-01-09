@@ -6,7 +6,7 @@
 </script>
 
 <!-- <div class="flex max-lg:flex-col-reverse items-center gap-12 py-12"> -->
-<div class="py-16">
+<div class="py-16 w-full aspect-[2/1]">
 	<div
 		class="max-w-xl absolute inset-0 flex flex-col justify-center z-10 bg-gradient-to-br from-black/90 to-black/30 h-full shadow-2xl rounded p-2"
 	>

@@ -54,6 +54,10 @@
 	$: if (content) {
 		calculateDimensions();
 	}
+
+	$: if (movies.length && content) {
+		handleScroll();
+	}
 </script>
 
 <svelte:window on:resize={calculateDimensions} />

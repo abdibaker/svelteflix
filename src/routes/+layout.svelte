@@ -2,7 +2,8 @@
 	import '../app.pcss';
 	import logo from '$lib/img/logo.svg';
 	import tmdb from '$lib/img/tmdb.svg';
-	import { page } from '$app/stores';
+	import { navigating, page } from '$app/stores';
+	import NavigatingIndicator from '$components/NavigatingIndicator.svelte';
 </script>
 
 <nav class="flex justify-between h-14 items-center px-4">
@@ -29,6 +30,10 @@
 		<img class="h-4" src={tmdb} alt="The Movie Db" />
 	</a>
 </footer>
+
+{#if $navigating}
+	<NavigatingIndicator />
+{/if}
 
 <style lang="pcss">
 	.fixedHeight {
